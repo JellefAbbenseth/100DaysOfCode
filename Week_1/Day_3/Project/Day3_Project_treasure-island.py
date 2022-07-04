@@ -26,15 +26,15 @@ print("Your mission is to find the treasure.")
 # https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Treasure%20Island%20Conditional.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oDe4ehjWZipYRsVfeAx2HyB7LCQ8_Fvi%26export%3Ddownload
 
 # Write your code below this line 👇
-choice = input("On your left side is a bridge, do you want to go right or left\n")
+choice = input('On your left side is a bridge, do you want to go "right" or "left"\n')
 if choice.lower() == "left":
     choice = input('There is an orc, who asks you:\n'
                    '"What has four legs in the morning, two at noon and three in the evening"\n'
                    'What do you answer?\n')
     if choice.lower() == "human":
-        choice = input("The orc is happy so he let you pass over the bridge.\n"
-                       "You find yourself in front of an old castle.\n"
-                       "Do you want to go through the front door straight, left or right?\n")
+        choice = input('The orc is happy so he let you pass over the bridge.\n'
+                       'You find yourself in front of an old castle.\n'
+                       'Do you want to go through the front door "straight", "left" or "right"?\n')
         if choice.lower() == "right":
             print("You got lucky,"
                   " you found a small hole and got into the old castle to find a small diamond in a chest.")
