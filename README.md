@@ -15,11 +15,11 @@
 <h3>Teaser</h3>
 <b>Guessing numbers:</b> A small game to guess the number.
 
-[<img src='https://github.com/JellefAbbenseth/100DaysOfCode/tree/main/Week_2/Day_12/Project/Teaser.jpg' alt='Guessing numbers' height='100'>](https://github.com/JellefAbbenseth/100DaysOfCode/tree/main/Week_2/Day_12/Project)
+[<img src='https://github.com/JellefAbbenseth/100DaysOfCode/blob/main/Week_2/Day_12/Project/Teaser.jpg' alt='Guessing numbers' height='100'>](https://github.com/JellefAbbenseth/100DaysOfCode/tree/main/Week_2/Day_12/Project)
 
 <b>Blackjack:</b> A small capstone-project-game to play against the dealer.
 
-[<img src='https://github.com/JellefAbbenseth/100DaysOfCode/tree/main/Week_2/Day_11/Capstone_Project/Teaser.jpg' alt='Blackjack' height='100'>](https://github.com/JellefAbbenseth/100DaysOfCode/tree/main/Week_2/Day_11/Capstone_Project)
+[<img src='https://github.com/JellefAbbenseth/100DaysOfCode/blob/main/Week_2/Day_11/Capstone_Project/Teaser.jpg' alt='Blackjack' height='100'>](https://github.com/JellefAbbenseth/100DaysOfCode/tree/main/Week_2/Day_11/Capstone_Project)
 
 
 <hr>
