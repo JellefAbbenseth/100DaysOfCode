@@ -1,3 +1,4 @@
+[<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png' alt='linkedin' height='100'>](https://github.com/JellefAbbenseth/100DaysOfCode)
 <h1 style="color:#1200B7; text-align:center"> 100DaysOfCode </h1>
 <h2 style="color:#5100BA; text-align:center">Learn Python</h2>
 
@@ -10,6 +11,17 @@
 <b>Project:</b> A project with variable size to work on your own with only a description and "goal" <br>
 <b>Capstone Project:</b> A bigger project with variable size, it's important and uses everything learned before.
 <br><br>
+<hr>
+<h3>Teaser</h3>
+<b>Guessing numbers:</b> A small game to guess the number.
+
+[<img src='https://github.com/JellefAbbenseth/100DaysOfCode/tree/main/Week_2/Day_12/Project/Teaser.jpg' alt='Guessing numbers' height='100'>](https://github.com/JellefAbbenseth/100DaysOfCode/tree/main/Week_2/Day_12/Project)
+
+<b>Blackjack:</b> A small capstone-project-game to play against the dealer.
+
+[<img src='https://github.com/JellefAbbenseth/100DaysOfCode/tree/main/Week_2/Day_11/Capstone_Project/Teaser.jpg' alt='Blackjack' height='100'>](https://github.com/JellefAbbenseth/100DaysOfCode/tree/main/Week_2/Day_11/Capstone_Project)
+
+
 <hr>
 
 #### Source -- https://www.udemy.com/course/100-days-of-code/
