@@ -21,6 +21,10 @@
 
 [<img src='https://github.com/JellefAbbenseth/100DaysOfCode/blob/main/Week_2/Day_11/Capstone_Project/Teaser.jpg' alt='Blackjack' height='100'>](https://github.com/JellefAbbenseth/100DaysOfCode/tree/main/Week_2/Day_11/Capstone_Project)
 
+<b>Hirst - painting:</b> A small challenge to get the first steps into the gui with turtle graphics.
+
+[<img src='https://github.com/JellefAbbenseth/100DaysOfCode/blob/main/Pictures/python%20programming%20hirst%20painting.jpg' alt='Hirst - painting' height='100'>](https://github.com/JellefAbbenseth/100DaysOfCode/tree/main/Week_3/Day_18/Day18_Challenge_hirst-painting)
+
 
 <hr>
 
