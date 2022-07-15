@@ -9,16 +9,21 @@ MOVE_DISTANCE = 10
 RIGHT = 0
 UP = 90
 FLIP = 180
+DOWN = 270
+
+direction_y = [UP, DOWN]
+direction_x = [RIGHT, FLIP]
 
 
 class Ball(Segment):
     def __init__(self):
         super().__init__(self.random_position())
-        self.direction_up = UP
-        self.direction_right = RIGHT
+        self.direction_up = random.choice(direction_y)
+        self.direction_right = random.choice(direction_x)
 
-    def random_position(self):
-        position = (random.randint(-250, 250), random.randint(-250, 250))
+    @staticmethod
+    def random_position():
+        position = (0, random.randint(-250, 250))
         return position
 
     def move(self):
@@ -32,7 +37,7 @@ class Ball(Segment):
         self.segment.goto(self.random_position())
         self.segment.showturtle()
 
-    def change_direction(self):
+    def change_direction(self, collision=False):
         position = self.segment.position()
 
         if position[1] >= UPPER_BOUNDARY or position[1] <= -UPPER_BOUNDARY:
@@ -40,3 +45,11 @@ class Ball(Segment):
         if position[0] >= RIGHT_BOUNDARY or position[0] <= -RIGHT_BOUNDARY:
             self.direction_right += FLIP
             self.refresh()
+            if position[0] < 0:
+                return "left"
+            else:
+                return "right"
+        if collision:
+            self.direction_right += FLIP
+
+        return ""

@@ -1,4 +1,3 @@
-import turtle
 from turtle import Turtle
 
 SCORE_POSITION = (0, 260)
