@@ -1,0 +1,43 @@
+Day 22 Challenge - Pong
+
+// Challenge, make a short structure
+
+Classes all import from Turtle:
+ - main
+ - segment
+ - ball
+ - character
+ - field
+ - moderator
+
+segment:
+ - square
+ - color = white
+ - penup()
+
+ball:
+ - import segment
+ - forward() // forever
+ - change_direction()
+
+character:
+ - import segment
+ - body = three segments together
+ - move_up()
+ - move_down()
+
+field:
+ - borders
+    - open left/right -> loosing
+    - closed top/bottom -> bouncing
+ - mittle line
+
+moderator:
+ - write to board
+ - count
+ - win/lose - end game
+
+main:
+ - screen
+ - start game
+ - check for actions
