@@ -1,0 +1,31 @@
+Turtle crossing
+Rules:
+1. A turtle moves forwards when you press the "Up" key. It can only move forwards, not back, left or right.
+2. Cars are randomly generated along the y-axis and will move from the right edge of the screen to the left edge.
+3. When the turtle hits the top edge of the screen, it moves back to the original position and the player levels up.
+    On the next level, the car speed increases.
+4. When the turtle collides with a car, it's game over and everything stops.
+
+car_manager:
+given: moving_speed, moving_increment, colors
+cars = square 2*1
+moving from right to left
+random y starting point (-240, 240)
+startin x point beneath (right corner + 50)
+
+player:
+given: starting point, moving-speed, finish_line
+turtle form
+color black
+moving direction only up (onkeypress)
+
+scoreboard:
+given: font
+Level text (start at 1)
+game over text
+
+main:
+given: loop, screen
+check collision -> ends game
+check player input
+generates cars (random (10 - 20))
