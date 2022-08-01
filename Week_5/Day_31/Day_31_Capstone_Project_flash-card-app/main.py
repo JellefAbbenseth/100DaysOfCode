@@ -5,7 +5,8 @@ import tkinter as tk
 # ---------------------------- CONSTANTS ------------------------------- #
 
 BACKGROUND_COLOR = "#B1DDC6"
-CSV_PATH = "./data/french_words.csv"
+FRENCH_WORDS_CSV_PATH = "./data/french_words.csv"
+WORDS_TO_LEARN_PATH = "./data/words_to_learn.csv"
 FRONT_CARD_PATH = "./images/card_front.png"
 BACK_CARD_PATH = "./images/card_back.png"
 WRONG_PATH = "./images/wrong.png"
@@ -15,12 +16,24 @@ WORD_TEXT_FONT = ("Ariel", 60, "bold")
 
 language_one = "French"
 language_two = "English"
-french_word = "trouve"
-english_word = "find"
+english_word = ""
 
 # ---------------------------- VOCABULARY ------------------------------- #
+# Check if "words_to_learn.csv" exists
+try:
+    dictionary_dict = {row.French: row.English for (index, row) in pandas.read_csv(WORDS_TO_LEARN_PATH).iterrows()}
+except FileNotFoundError:
+    dictionary_dict = {row.French: row.English for (index, row) in pandas.read_csv(FRENCH_WORDS_CSV_PATH).iterrows()}
 
-dictionary_dict = {row.French: row.English for (index, row) in pandas.read_csv(CSV_PATH).iterrows()}
+french_word = random.choice(list(dictionary_dict.keys()))
+
+
+def remove_known_word():
+    global french_word
+    dictionary_dict.pop(french_word)
+    dictionary_df = pandas.DataFrame(dictionary_dict.items(), columns=[language_one, language_two])
+    dictionary_df.to_csv(WORDS_TO_LEARN_PATH, index=False)
+    new_word()
 
 
 def new_word():
@@ -77,7 +90,7 @@ right_button = tk.Button(
     bg=BACKGROUND_COLOR,
     highlightthickness=0,
     image=button_image_right,
-    command=new_word
+    command=remove_known_word
 )
 right_button.grid(row=1, column=1)
 
