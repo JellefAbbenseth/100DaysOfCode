@@ -30,4 +30,4 @@
 
 #### Source -- https://www.udemy.com/course/100-days-of-code/
 #### By Dr. Angela Yu -- https://www.udemy.com/user/4b4368a3-b5c8-4529-aa65-2056ec31f37e/
-#### Actual: Day 32 / 100 -- Chapter 308 / 695
+#### Actual: Day 32 / 100 -- Chapter 311 / 695
