@@ -1,7 +1,8 @@
 # API_KEY only activated during the challenge
-import requests
+import os
 
-API_KEY = "b28794401acad3b900530ffb25ff0e92"
+import requests
+API_KEY = os.environ.get("OWN_API_KEY")
 MY_LAT = 52.513550
 MY_LONG = 13.387871
 RAINY_LAT = 46.607771388122394
@@ -26,10 +27,9 @@ def get_onecall_data():
     print(weather_data)
     twelve_hour_data = weather_data["hourly"][:12]
     print(twelve_hour_data)
-    for i in range(len(twelve_hour_data)):
-        for j in range(len(twelve_hour_data[i]["weather"])):
-            print(twelve_hour_data[i]["weather"][j]["id"])
-            if twelve_hour_data[i]["weather"][j]["id"] < 700:
+    for hour_data in twelve_hour_data:
+        for hourly_weather_data in hour_data["weather"]:
+            if int(hourly_weather_data["id"]) < 700:
                 print("Bring an Umbrella")
                 return
 
