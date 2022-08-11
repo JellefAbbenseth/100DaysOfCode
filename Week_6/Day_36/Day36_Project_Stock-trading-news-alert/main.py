@@ -1,4 +1,5 @@
 from stocks import Stocks
+from news import News
 
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
@@ -14,9 +15,19 @@ print(data)
 # STEP 2: Use https://newsapi.org
 # Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME. 
 
+news = News(company_name=COMPANY_NAME)
+articles = news.get_news_data()
+
 # STEP 3: Use https://www.twilio.com
 # Send a separate message with the percentage change and each article's title and description to your phone number.
-
+if data[2] > 0:
+    price_direction = "🔺"
+else:
+    price_direction = "🔻"
+for i in range(len(articles)):
+    print(f"{COMPANY_NAME}: {price_direction}{int(round(data[2], 0))}%\n"
+          f"Headline: {articles[i]['Headline']}\n"
+          f"Brief: {articles[i]['Brief']}")
 
 # Optional: Format the SMS message like this:
 """
