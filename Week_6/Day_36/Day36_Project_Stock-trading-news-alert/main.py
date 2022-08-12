@@ -1,8 +1,12 @@
 from stocks import Stocks
 from news import News
+from mail import Mail
 
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
+smtp_user = input("Please type in the user mail address: ")
+smtp_pass = input("Please type in the password: ")
+smtp_receiver = input("Please type in the mail address of the receiver: ")
 
 # STEP 1: Use https://www.alphavantage.co
 # When STOCK price increase/decreases by 5% between yesterday and the day before yesterday then print("Get News").
@@ -10,7 +14,6 @@ alert_price_difference = 5
 
 stocks = Stocks(stock_name=STOCK, company_name=COMPANY_NAME, alert_price_difference=alert_price_difference)
 data = stocks.get_stock_data()
-print(data)
 
 # STEP 2: Use https://newsapi.org
 # Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME. 
@@ -18,18 +21,23 @@ print(data)
 news = News(company_name=COMPANY_NAME)
 articles = news.get_news_data()
 
-# STEP 3: Use https://www.twilio.com
+# STEP 3: Use https://www.twilio.com or send per mail
 # Send a separate message with the percentage change and each article's title and description to your phone number.
-if data[2] > 0:
-    price_direction = "🔺"
+if data[3]:
+    text_body = ""
+    if data[2] > 0:
+        price_direction = "🔺"
+    else:
+        price_direction = "🔻"
+    for i in range(len(articles)):
+        text_body = f"{COMPANY_NAME}: {price_direction}{int(round(data[2], 0))}%\n" \
+                    f"Headline: {articles[i]['Headline']}\nBrief: {articles[i]['Brief']} "
+        mail = Mail(smtp_user, smtp_receiver, smtp_pass)
+        mail.sent_mail(f"News about {COMPANY_NAME}!", text_body)
 else:
-    price_direction = "🔻"
-for i in range(len(articles)):
-    print(f"{COMPANY_NAME}: {price_direction}{int(round(data[2], 0))}%\n"
-          f"Headline: {articles[i]['Headline']}\n"
-          f"Brief: {articles[i]['Brief']}")
+    print("No Alert!")
 
-# Optional: Format the SMS message like this:
+# Optional: Format the SMS/mail message like this:
 """
 TSLA: 🔺2% 
 Headline: Were Hedge Funds Right About Piling Into Tesla Inc. (TSLA)?. 

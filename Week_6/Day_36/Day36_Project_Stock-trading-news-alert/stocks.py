@@ -33,14 +33,12 @@ class Stocks:
 
     def get_stock_data(self):
         response = requests.get(url=self.API_ALPHVANTAGE, params=self.PARAMETER)
-        print(response.json())
         time_series_daily = response.json()[self.data_key_time_series_daily]
         self.price_yesterday = float(time_series_daily[self.yesterday][self.data_key_daily_closure])
         self.price_day_before_yesterday = \
             float(time_series_daily[self.day_before_yesterday][self.data_key_daily_closure])
         self.price_difference: float = ((self.price_yesterday / self.price_day_before_yesterday) - 1) * 100
         if self.price_difference < -self.alert_price_difference or self.price_difference > self.alert_price_difference:
-            print("Get News")
             self.alert = True
 
         return [self.price_yesterday, self.price_day_before_yesterday, self.price_difference, self.alert]
