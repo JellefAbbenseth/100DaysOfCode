@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    height: 200px;
+    width: 200px;
+}
+
+.top-container {
+    background-color: #E4F9F5;
+    border: 10px black solid;
+    padding: 20px;
+}
+
+.middle-container {
+    background-color: red;
+    border: 20px black solid;
+    margin-left: 260px;
+}
+
+.bottom-container {
+    background-color: yellow;
+    border: 10px black solid;
+    margin-left: 500px;
+}
