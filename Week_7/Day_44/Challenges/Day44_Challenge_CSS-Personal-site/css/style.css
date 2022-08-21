@@ -3,19 +3,65 @@
     padding: 0;
 }
 
+body {
+    text-align: center;
+    font-family: 'Merriweather', serif;
+}
+
+h1 {
+    padding: 50px 0 20px 0;
+    margin: 2.6rem auto 0 auto;
+    color: #66BFBF;
+    font-family: 'Sacramento', cursive;
+    font-size: 5.625rem;  /* dynamically: 16px = 100% = 1em */
+    line-height: 2;
+}
+
+h2 {
+    color: #66BFBF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+h3 {
+    color: #11999E;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .top-container {
     background-color: #E4F9F5;
+    padding-top: 100px;
+    position: relative;
 }
 
 .middle-container {
-    background-color: red;
-    height: 200px;
-    width: 200px;
 
 }
 
 .bottom-container {
-    background-color: blue;
-    height: 200px;
-    width: 200px;
+
+}
+
+.top-cloud {
+    position: absolute;
+    left: 55%;
+    top: 100px;
+}
+
+.bottom-cloud {
+    position: absolute;
+    left: 35%;
+    top: 20rem;
+}
+
+.profile-img {
+    height: 250px;
+    border-radius: 90%;
+}
+
+.contact-me a,
+.footer-link {
+    color: #11999E;
+    text-decoration: none;
 }
