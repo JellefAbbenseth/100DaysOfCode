@@ -1,4 +1,4 @@
-# #################### Extra Hard Starting Project ######################
+# #################### Extra Hard Starting Projects ######################
 
 # mostly not working because of security reasons of the mail providers
 # to get it to work, change the settings of the mail provider
