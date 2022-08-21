@@ -1,7 +1,7 @@
 import random
 
-from game_data import data
-from art import *
+from Project.game_data import data
+from Project.art import *
 from replit import clear
 
 player_continues = True

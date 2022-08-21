@@ -1,4 +1,4 @@
-from art import logo
+from Challenge.art import logo
 from replit import clear
 
 

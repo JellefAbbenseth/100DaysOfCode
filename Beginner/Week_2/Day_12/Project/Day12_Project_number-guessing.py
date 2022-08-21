@@ -4,7 +4,7 @@
 #  - easy: 10
 import random
 
-from art import *
+from Project.art import *
 
 print(logo)
 attempts = 10

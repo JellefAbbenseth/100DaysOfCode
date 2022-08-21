@@ -12,7 +12,7 @@
 
 import random
 
-from art import logo
+from Capstone_Project.art import logo
 from replit import clear
 
 
