@@ -16,10 +16,6 @@ prices = driver.find_elements(By.CSS_SELECTOR, "#store div b")
 price_data = []
 for i in range(8):
     price_data.append(prices[i].text.split()[-1])
-    # print(store_items[i].text)
-
-
-# print(price_data)
 
 
 # Todo: check code -> money is nearly zero every turn
