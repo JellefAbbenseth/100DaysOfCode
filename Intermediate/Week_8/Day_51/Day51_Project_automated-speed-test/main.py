@@ -22,5 +22,13 @@ confirm_choice_privacy = driver.find_element(
     "#onetrust-consent-sdk .ot-pc-footer button"
 )
 confirm_choice_privacy.click()
+sleep(2.0)
 
-# Todo: Start Speedtest
+start_test = driver.find_element(
+    By.CSS_SELECTOR,
+    ".js-start-test"
+)
+start_test.click()
+sleep(120.0)
+
+# Todo: get Data from Test
