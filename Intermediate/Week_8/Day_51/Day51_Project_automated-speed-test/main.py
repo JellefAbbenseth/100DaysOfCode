@@ -32,3 +32,7 @@ start_test.click()
 sleep(120.0)
 
 # Todo: get Data from Test
+get_data = driver.find_element(
+    By.CSS_SELECTOR,
+    ""
+)
