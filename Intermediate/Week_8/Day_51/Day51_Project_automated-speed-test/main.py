@@ -32,7 +32,11 @@ start_test.click()
 sleep(120.0)
 
 # Todo: get Data from Test
-get_data = driver.find_element(
-    By.CSS_SELECTOR,
-    ""
-)
+try:
+    info_window = driver.find_element(
+        By.CSS_SELECTOR,
+        ".main-view .desktop-app-prompt-modal .pure-u-1 .close-btn"
+    )
+    print(info_window.text)
+except:
+    print("No Info")
