@@ -31,12 +31,20 @@ start_test = driver.find_element(
 start_test.click()
 sleep(120.0)
 
-# Todo: get Data from Test
 try:
     info_window = driver.find_element(
         By.CSS_SELECTOR,
         ".main-view .desktop-app-prompt-modal .pure-u-1 .close-btn"
     )
-    print(info_window.text)
+    info_window.click()
 except:
     print("No Info")
+
+
+result_data = driver.find_elements(
+    By.CSS_SELECTOR,
+    ".result-container-speed .result-item-container .result-data-large"
+)
+download = result_data[0].text
+upload = result_data[1].text
+print(f"Download: {download} Mbps\nUpload: {upload} Mbps")
