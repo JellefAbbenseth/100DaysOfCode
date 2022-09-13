@@ -19,10 +19,10 @@ search_field = driver.find_element(
 )
 search_field.send_keys(search_term)
 
-# Todo: check send_search
+# Todo: check send_search (Check for submit)
 
 send_search = driver.find_element(
     By.CSS_SELECTOR,
     "#__layout .search-form-search-field .search-form__submit"
 )
-send_search.click()
+print(send_search.text)
