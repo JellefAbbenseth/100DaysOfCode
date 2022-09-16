@@ -23,6 +23,6 @@ search_field.send_keys(search_term)
 
 send_search = driver.find_element(
     By.CSS_SELECTOR,
-    "#__layout .search-form-search-field .search-form__submit"
+    "#__layout .search-form-search-field ."
 )
 search_field.submit()
