@@ -25,4 +25,3 @@ send_search = driver.find_element(
     By.CSS_SELECTOR,
     " "  # form
 )
-search_field.submit()
