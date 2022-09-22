@@ -3,7 +3,7 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-ECOSIA_URL = "https://www.ecosia.org/?c=de"
+ECOSIA_URL = "https://duckduckgo.com/"
 
 search_term = input("Please type in what you want to search: ")
 
@@ -15,7 +15,7 @@ sleep(2.0)
 
 search_field = driver.find_element(
     By.CSS_SELECTOR,
-    "#__layout .search-form__input-wrapper input"
+    "#search_form_input_homepage"
 )
 search_field.send_keys(search_term)
 
@@ -23,5 +23,6 @@ search_field.send_keys(search_term)
 
 send_search = driver.find_element(
     By.CSS_SELECTOR,
-    " "  # form
+    "#search_button_homepage"  # form
 )
+send_search.click()
