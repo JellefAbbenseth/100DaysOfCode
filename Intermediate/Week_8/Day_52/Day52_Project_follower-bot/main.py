@@ -19,10 +19,11 @@ search_field = driver.find_element(
 )
 search_field.send_keys(search_term)
 
-# Todo: Check for submit in Form
 
 send_search = driver.find_element(
     By.CSS_SELECTOR,
     "#search_button_homepage"  # form
 )
 send_search.click()
+
+# Todo: Check for wiki entry
