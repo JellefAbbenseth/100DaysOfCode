@@ -27,3 +27,4 @@ send_search = driver.find_element(
 send_search.click()
 
 # Todo: Check for wiki entry
+# check if there are search entries
