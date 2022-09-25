@@ -22,9 +22,14 @@ search_field.send_keys(search_term)
 
 send_search = driver.find_element(
     By.CSS_SELECTOR,
-    "#search_button_homepage"  # form
+    "#search_button_homepage"
 )
 send_search.click()
 
 # Todo: Check for wiki entry
 # check if there are search entries
+
+check_entries = driver.find_elements(
+    By.CSS_SELECTOR,
+    ".test"
+)
