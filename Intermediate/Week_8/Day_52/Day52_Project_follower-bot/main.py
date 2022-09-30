@@ -31,5 +31,5 @@ send_search.click()
 
 check_entries = driver.find_elements(
     By.CSS_SELECTOR,
-    "" # get entries
+    "." # get entries
 )
