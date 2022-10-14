@@ -8,7 +8,7 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-SITE_URL = "https://500px.com/popular"
+SITE_URL = ""
 
 chrome_driver_path = "/Users/Jellef/Documents/Programme/chromedriver_win32/chromedriver.exe"
 driver = webdriver.Chrome(executable_path=chrome_driver_path)
