@@ -14,4 +14,4 @@ chrome_driver_path = "/Users/Jellef/Documents/Programme/chromedriver_win32/chrom
 driver = webdriver.Chrome(executable_path=chrome_driver_path)
 
 driver.get(SITE_URL)
-sleep(5.0)
+sleep(2.0)
