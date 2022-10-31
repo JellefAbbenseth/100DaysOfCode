@@ -15,11 +15,11 @@
 <h3>Teaser</h3>
 <b>Guessing numbers:</b> A small game to guess the number.
 
-[<img src='https://github.com/JellefAbbenseth/100DaysOfCode/blob/main/Beginner/Week_2/Day_12/Project/Teaser.jpg' alt='Guessing numbers' height='100'>](https://github.com/JellefAbbenseth/100DaysOfCode/tree/main/Beginner/Week_2/Day_12/Project)
+[<img src='https://github.com/JellefAbbenseth/100DaysOfCode/blob/main/01 Beginner/Week_2/Day_12/Project/Teaser.jpg' alt='Guessing numbers' height='100'>](https://github.com/JellefAbbenseth/100DaysOfCode/tree/main/Beginner/Week_2/Day_12/Project)
 
 <b>Blackjack:</b> A small capstone-project-game to play against the dealer.
 
-[<img src='https://github.com/JellefAbbenseth/100DaysOfCode/blob/main/Beginner/Week_2/Day_11/Capstone_Project/Teaser.jpg' alt='Blackjack' height='100'>](https://github.com/JellefAbbenseth/100DaysOfCode/tree/main/Beginner/Week_2/Day_11/Capstone_Project)
+[<img src='https://github.com/JellefAbbenseth/100DaysOfCode/blob/main/01 Beginner/Week_2/Day_11/Capstone_Project/Teaser.jpg' alt='Blackjack' height='100'>](https://github.com/JellefAbbenseth/100DaysOfCode/tree/main/Beginner/Week_2/Day_11/Capstone_Project)
 
 <b>Hirst - painting:</b> A small challenge to get the first steps into the gui with turtle graphics.
 
