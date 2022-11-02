@@ -1,13 +1,14 @@
-<!DOCTYPE HTML>
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
 
-<html>
-	<head>
-		<title>Login</title>
-	</head>
-	<body>
-        <div class="container">
+{% block title %}Login{% endblock %}
+
+{% block content %}
+	<div class="container">
 		<h1>Login</h1>
-        <!-- This is where our form will go. -->
+		<!-- This is where our form will go. -->
+		{{ wtf.quick_form(form) }}
+		<!-- Exchanged with quick_form
 		<form method="post" action="{{ url_for('login') }}" enctype="multipart/form-data" novalidate>
 			{{ form.csrf_token }}
 			<p>
@@ -24,6 +25,6 @@
 			</p>
 			{{ form.submit }}
 		</form>
-        </div>
-	</body>
-</html>
+		-->
+	</div>
+{% endblock %}

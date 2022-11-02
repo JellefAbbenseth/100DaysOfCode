@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Length, Email
@@ -17,8 +18,14 @@ class LoginForm(FlaskForm):
     submit = SubmitField(label="Log In")
 
 
-app = Flask(__name__)
-app.secret_key = 'development key'
+def create_app():
+    application = Flask(__name__)
+    application.secret_key = 'development key'
+    Bootstrap(application)
+    return application
+
+
+app = create_app()
 
 
 @app.route('/')
