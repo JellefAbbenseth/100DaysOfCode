@@ -2,8 +2,9 @@ from flask import Flask, render_template, redirect, url_for, request
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired
+from sqlalchemy import desc
+from wtforms import StringField, SubmitField, IntegerField, FloatField
+from wtforms.validators import DataRequired, URL, length
 import requests
 
 app = Flask(__name__)
@@ -32,9 +33,15 @@ class Movie(db.Model):
 
 # Database interactions
 
+def add_movie(new_movie):
+    with app.app_context():
+        db.session.add(new_movie)
+        db.session.commit()
+
+
 def load_movies():
     with app.app_context():
-        movies = db.session.query(Movie).all()
+        movies = db.session.query(Movie).order_by(desc(Movie.rating)).all()
     return movies
 
 
@@ -49,6 +56,13 @@ def update_movie_by_id(movie_id, new_rating, new_review):
         movie_to_update = Movie.query.get(movie_id)
         movie_to_update.rating = new_rating
         movie_to_update.review = new_review
+        db.session.commit()
+
+
+def update_movie_ranking_by_id(movie_id, new_ranking):
+    with app.app_context():
+        movie_to_update = Movie.query.get(movie_id)
+        movie_to_update.ranking = new_ranking
         db.session.commit()
 
 
@@ -86,12 +100,24 @@ class EditForm(FlaskForm):
 
 
 class AddForm(FlaskForm):
-    title = StringField(label='Movie Title', validators=[DataRequired()])
+    title = StringField(label='Movie Title', validators=[DataRequired(), length(max=50)])
+    year = IntegerField(label='Year', validators=[DataRequired()])
+    description = StringField(label='Description', validators=[DataRequired(), length(max=250)])
+    rating = FloatField(label='Rating', validators=[DataRequired()])
+    review = StringField(label='Review', validators=[DataRequired(), length(max=250)])
+    img_url = StringField(label='Image_url', validators=[DataRequired(), URL(), length(max=250)])
     submit = SubmitField(label='Add Movie')
+
+
+def update_ranking():
+    movies = load_movies()
+    for i in range(len(movies)):
+        update_movie_ranking_by_id(movies[i].id, i+1)
 
 
 @app.route("/")
 def home():
+    update_ranking()
     movies = load_movies()
     return render_template("index.html", movies=movies)
 
@@ -100,8 +126,16 @@ def home():
 def add():
     form = AddForm()
     if form.validate_on_submit():
-        title = form.title.data
-        print("Valid action\nTitle:", title)
+        data = Movie(
+            title=form.title.data,
+            year=form.year.data,
+            description=form.description.data,
+            rating=form.rating.data,
+            ranking=0,
+            review=form.review.data,
+            img_url=form.img_url.data
+        )
+        add_movie(new_movie=data)
         return redirect(url_for('home'))
     return render_template('add.html', form=form)
 
