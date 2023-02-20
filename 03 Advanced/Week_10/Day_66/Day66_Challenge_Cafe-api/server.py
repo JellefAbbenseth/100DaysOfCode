@@ -51,7 +51,21 @@ def get_random():
     return jsonify(cafe=random_cafe.to_dict())
 
 
+@app.route('/search', methods=['GET', 'POST'])
+def get_search():
+    loc = request.args.get('loc')
+    with app.app_context():
+        cafe = db.session.query(Cafe).filter_by(location=loc).first()
+        if cafe:
+            return jsonify(cafe=cafe.to_dict())
+        else:
+            return jsonify(error={"Not Found": "Sorry, we don't have a cafe at that location."})
+
+
 # HTTP POST - Create Record
+@app.route('/add', methods=['GET', 'POST'])
+def post_add():
+    return render_template("index.html")
 
 # HTTP PUT/PATCH - Update Record
 
