@@ -4,13 +4,19 @@
 
 <h3>Official Online Course</h3>
 <b>100 Days of Code: The Complete Python Pro Bootcamp for 2022 - ûdemy Course</b>
+<br><br>
+A great course with Python as the main part and combining with different topics to make dozens of small, medium and big projects, while getting less and less help the further the course goes on. Near the end there are nearly no instructions to follow. Just solutions after finishing those exercises and challenges. The last twenty "Days" are personal, professional level projects, with no help at all, only a given goal for this project.
+<br><br>
+<b>Topics:</b><br>
+- Python<br> - Databases<br> - APIs<br> - Web<br> - Data Science
 <hr>
 <b><i>There are different kinds of exercises: </i></b><br>
 <b>Exercises:</b> A small exercise in the middle of a topic to check comprehension <br>
 <b>Challenge:</b> A small exercise during different lectures to pause and try it alone <br>
 <b>Project:</b> A project with variable size to work on your own with only a description and "goal" <br>
-<b>Capstone Project:</b> A bigger project with variable size, it's important and uses everything learned before.
-<br><br>
+<b>Capstone Project:</b> A bigger project with variable size, it's important for depening the topics comprehension. <br>
+<b>Portfolio Project:</b> A big project with a given goal and nothing more.
+<br>
 <hr>
 <h3>Teaser</h3>
 <b>Guessing numbers:</b> A small game to guess the number.
