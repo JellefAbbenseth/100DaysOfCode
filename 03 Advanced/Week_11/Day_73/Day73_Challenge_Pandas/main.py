@@ -83,5 +83,30 @@ print(parts_per_set.tail(), end='\n\n')
 plt.scatter(parts_per_set.index[:-2], parts_per_set.num_parts[:-2])
 plt.show()
 
+set_theme_count = sets['theme_id'].value_counts()
+print(set_theme_count[:5], end="\n")
+
+themes = pd.read_csv('data/themes.csv', names=['id', 'name', 'parent_id'], header=0)
+print(themes.head(), end="\n")
+print(themes[themes.name == 'Star Wars'], end="\n")
+print(sets[sets.theme_id == 18], end="\n")
+print(sets[sets.theme_id == 209], end="\n\n")
+
+set_theme_count = sets["theme_id"].value_counts()
+print(set_theme_count[:5], end="\n")
+
+set_theme_count = pd.DataFrame({'id':set_theme_count.index, 'set_count':set_theme_count.values})
+print(set_theme_count.head(), end="\n")
+
+merged_df = pd.merge(set_theme_count, themes, on='id')
+print(merged_df[:3], end="\n\n")
+
+plt.figure(figsize=(14,8))
+plt.xticks(fontsize=14, rotation=45)
+plt.yticks(fontsize=14)
+plt.xlabel('Theme Name', fontsize=14)
+plt.ylabel('Nr of Sets', fontsize=14)
+plt.bar(merged_df.name[:10], merged_df.set_count[:10])
+plt.show()
 
 
