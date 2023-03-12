@@ -42,3 +42,25 @@ print(df_btc_search.head())
 
 print(f'largest BTC News Search: {df_btc_search.BTC_NEWS_SEARCH.max()}')
 
+# Data Cleaning
+print(f'Missing values for Tesla?: {df_tesla.isna().values.any()}')
+print(f'Missing values for U/E?: {df_unemployment.isna().values.any()}')
+print(f'Missing values for BTC Search?: {df_btc_search.isna().values.any()}')
+print(f'Missing values? for BTC price?: {df_btc_price.isna().values.any()}')
+
+print(f'Number of missing values: {df_btc_price.isna().values.sum()}')
+print(df_btc_price[df_btc_price.CLOSE.isna()])
+# df_btc_price = df_btc_price.dropna(inplace=True)
+
+# Convert Strings to DateTime Objects
+type(df_tesla.MONTH[0])
+df_tesla.MONTH = pd.to_datetime(df_tesla.MONTH)
+df_btc_search.MONTH = pd.to_datetime(df_btc_search.MONTH)
+df_unemployment.MONTH = pd.to_datetime(df_unemployment.MONTH)
+df_btc_price.DATE = pd.to_datetime(df_btc_price.DATE)
+print(df_tesla.MONTH.head())
+
+# Converting from Daily to Monthly Data
+df_btc_monthly = df_btc_price.resample('M', on='DATE').last()
+print(df_btc_monthly.shape)
+print(df_btc_monthly.head())
