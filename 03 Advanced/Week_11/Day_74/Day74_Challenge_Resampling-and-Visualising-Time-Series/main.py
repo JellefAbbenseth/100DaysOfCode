@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 
 # original in colaboratory
 
@@ -64,3 +65,71 @@ print(df_tesla.MONTH.head())
 df_btc_monthly = df_btc_price.resample('M', on='DATE').last()
 print(df_btc_monthly.shape)
 print(df_btc_monthly.head())
+
+# Data Visualisation
+
+# Create locators for ticks on the time axis
+years = mdates.YearLocator()
+months = mdates.MonthLocator()
+years_fmt = mdates.DateFormatter('%Y')
+
+# Tesla Stock Price v.s. Search Volume
+ax1 = plt.gca()
+ax2 = ax1.twinx()
+
+ax1.set_ylabel('TSLA Stock Price')
+ax2.set_ylabel('Search Trend')
+
+ax1.plot(df_tesla.MONTH, df_tesla.TSLA_USD_CLOSE)
+ax2.plot(df_tesla.MONTH, df_tesla.TSLA_WEB_SEARCH)
+
+# Colored
+ax1 = plt.gca()
+ax2 = ax1.twinx()
+
+ax1.set_ylabel('TSLA Stock Price', color='#E6232E')
+ax2.set_ylabel('Search Trend', color='skyblue')
+
+ax1.plot(df_tesla.MONTH, df_tesla.TSLA_USD_CLOSE, color='#E6232E')
+ax2.plot(df_tesla.MONTH, df_tesla.TSLA_WEB_SEARCH, color='skyblue')
+
+# Bigger
+plt.figure(figsize=(14,8), dpi=120)
+plt.title('Tesla Web Search vs Price', fontsize=18)
+
+ax1 = plt.gca()
+ax2 = ax1.twinx()
+
+ax1.set_ylabel('TSLA Stock Price', color='#E6232E', fontsize=14)
+ax2.set_ylabel('Search Trend', color='skyblue', fontsize=14)
+
+ax1.plot(df_tesla.MONTH, df_tesla.TSLA_USD_CLOSE, color='#E6232E', linewidth=3)
+ax2.plot(df_tesla.MONTH, df_tesla.TSLA_WEB_SEARCH, color='skyblue', linewidth=3)
+
+plt.show()
+
+# With ticks
+plt.figure(figsize=(14,8), dpi=120)
+plt.title('Tesla Web Search vs Price', fontsize=18)
+
+plt.xticks(fontsize=14, rotation=45)
+
+ax1 = plt.gca()
+ax2 = ax1.twinx()
+
+ax1.xaxis.set_major_locator(years)
+ax1.xaxis.set_major_formatter(years_fmt)
+ax1.xaxis.set_minor_locator(months)
+
+ax1.set_ylabel('TSLA Stock Price', color='#E6232E', fontsize=14)
+ax2.set_ylabel('Search Trend', color='skyblue', fontsize=14)
+
+ax1.set_ylim([0, 600])
+ax1.set_xlim([df_tesla.MONTH.min(), df_tesla.MONTH.max()])
+
+ax1.plot(df_tesla.MONTH, df_tesla.TSLA_USD_CLOSE, color='#E6232E', linewidth=3)
+ax2.plot(df_tesla.MONTH, df_tesla.TSLA_WEB_SEARCH, color='skyblue', linewidth=3)
+
+plt.show()
+
+
