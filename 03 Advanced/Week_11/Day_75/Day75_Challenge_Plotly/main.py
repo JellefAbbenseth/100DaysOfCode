@@ -36,3 +36,10 @@ df_apps_clean = df_apps_clean.drop_duplicates(subset=['App', 'Type', 'Price'])
 print(df_apps_clean[df_apps_clean.App == 'Instagram'])
 
 print(df_apps_clean.shape)
+
+# Find different apps
+print(df_apps_clean.sort_values('Rating', ascending=False).head())
+
+print(df_apps_clean.sort_values('Size_MBs', ascending=False).head())
+
+print(df_apps_clean.sort_values('Reviews', ascending=False).head(50))
