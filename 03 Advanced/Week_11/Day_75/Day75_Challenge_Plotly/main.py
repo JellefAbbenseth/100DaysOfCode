@@ -1,4 +1,5 @@
 import pandas as pd
+import plotly.express as px
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
@@ -43,3 +44,57 @@ print(df_apps_clean.sort_values('Rating', ascending=False).head())
 print(df_apps_clean.sort_values('Size_MBs', ascending=False).head())
 
 print(df_apps_clean.sort_values('Reviews', ascending=False).head(50))
+
+# Plotly Pie and Donut Charts - Visualise Categorical Data: Content Ratings
+
+ratings = df_apps_clean.Content_Rating.value_counts()
+print(ratings)
+
+fig = px.pie(labels=ratings.index, values=ratings.values)
+fig.show()
+
+fig = px.pie(labels=ratings.index,
+             values=ratings.values,
+             title="Content Rating",
+             names=ratings.index,
+             )
+fig.update_traces(textposition='outside', textinfo='percent+label')
+
+fig.show()
+
+fig = px.pie(labels=ratings.index,
+             values=ratings.values,
+             title="Content Rating",
+             names=ratings.index,
+             hole=0.6,
+             )
+fig.update_traces(textposition='inside', textfont_size=15, textinfo='percent')
+
+fig.show()
+
+# Numeric Type Conversion: Examine the Number of Installs
+
+print(df_apps_clean.Installs.describe())
+
+print(df_apps_clean.info())
+
+print(df_apps_clean[['App', 'Installs']].groupby('Installs').count())
+
+df_apps_clean.Installs = df_apps_clean.Installs.astype(str).str.replace(',', "")
+df_apps_clean.Installs = pd.to_numeric(df_apps_clean.Installs)
+print(df_apps_clean[['App', 'Installs']].groupby('Installs').count())
+
+# Find the Most Expensive Apps, Filter out the Junk, and Calculate a (ballpark) Sales
+
+print(df_apps_clean.Price.describe())
+
+df_apps_clean.Price = df_apps_clean.Price.astype(str).str.replace('$', "")
+df_apps_clean.Price = pd.to_numeric(df_apps_clean.Price)
+
+print(df_apps_clean.sort_values('Price', ascending=False).head(20))
+
+df_apps_clean = df_apps_clean[df_apps_clean['Price'] < 250]
+print(df_apps_clean.sort_values('Price', ascending=False).head(5))
+
+df_apps_clean['Revenue_Estimate'] = df_apps_clean.Installs.mul(df_apps_clean.Price)
+print(df_apps_clean.sort_values('Revenue_Estimate', ascending=False)[:10])
