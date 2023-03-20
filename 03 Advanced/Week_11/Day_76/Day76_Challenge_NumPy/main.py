@@ -77,3 +77,82 @@ noise = np.random.rand(128, 128, 3)
 print(noise)
 plt.imshow(noise)
 plt.show()
+
+# Linear Algebra with Vectors
+
+v1 = np.array([4, 5, 2, 7])
+v2 = np.array([2, 1, 3, 3])
+print(v1 + v2)
+print(v1 * v2)
+
+# Python Lists vs ndarrays
+list1 = [4, 5, 2, 7]
+list2 = [2, 1, 3, 3]
+print(list1 + list2)
+# print(list1 * list2) -> TypeError!
+
+# Broadcasting and Scalars
+
+array_2d = np.array([[1, 2, 3, 4],
+                     [5, 6, 7, 8]])
+print(array_2d + 10)
+print(array_2d * 5)
+
+# Matrix Multiplication with @ and .matmul()
+
+a1 = np.array([[1, 3],
+               [0, 1],
+               [6, 2],
+               [9, 7]])
+
+b1 = np.array([[4, 1, 3],
+               [5, 8, 5]])
+
+print(f'{a1.shape}: a has {a1.shape[0]} rows and {a1.shape[1]} columns.')
+print(f'{b1.shape}: b has {b1.shape[0]} rows and {b1.shape[1]} columns.')
+print('Dimensions of result: (4x2)*(2x3)=(4x3)')
+
+c = np.matmul(a1, b1)
+print(c)
+print(f'Matrix c has {c.shape[0]} rows and {c.shape[1]} columns.')
+
+# Manipulating Images as ndarrays
+
+img = misc.face()
+plt.imshow(img)
+
+print(type(img))
+print(img.shape)
+print(img.ndim)
+
+grey_vals = np.array([0.2126, 0.7152, 0.0722])
+
+sRGB_array = img / 255
+grey_vals = np.array([0.2126, 0.7152, 0.0722])
+img_gray = sRGB_array @ grey_vals # img_gray = np.matmul(sRGB_array, grey_vals)
+plt.imshow(img_gray, cmap='gray')
+
+print(a1, end="\n\n")
+print(np.flip(a1))
+
+plt.imshow(np.flip(img_gray), cmap='gray')
+plt.show()
+plt.imshow(np.rot90(img))
+plt.show()
+solar_img = 255 - img
+plt.imshow(solar_img)
+plt.show()
+
+# Use your Own Image!
+
+file_name = 'yummy_macarons.jpg'
+
+my_img = Image.open(file_name)
+img_array = np.array(my_img)
+print(img_array.ndim)
+print(img_array.shape)
+
+plt.imshow(img_array)
+plt.show()
+plt.imshow(255-img_array)
+plt.show()
