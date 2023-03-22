@@ -50,4 +50,19 @@ print(data.head())
 print('\nInfo:')
 print(data.info())
 
+# Descriptive Statistics
 
+print(data.describe())
+print('\nLowest budget film:')
+print(data[data.USD_Production_Budget == 1100.00])
+print(f'\nHighest budget film: \n{data[data.USD_Production_Budget == 425000000.00]}')
+
+# Investigating the Zero Revenue Films
+
+zero_domestic = data[data.USD_Domestic_Gross == 0]
+print(f'Number of films that grossed $0 domestically {len(zero_domestic)}')
+print(zero_domestic.sort_values('USD_Production_Budget', ascending=False))
+
+zero_worldwide = data[data.USD_Worldwide_Gross == 0]
+print(f'Number of films that grossed $0 worldwide {len(zero_worldwide)}')
+print(zero_worldwide.sort_values('USD_Production_Budget', ascending=False))
