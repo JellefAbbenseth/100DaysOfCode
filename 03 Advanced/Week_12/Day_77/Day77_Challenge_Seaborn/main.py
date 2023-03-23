@@ -66,3 +66,28 @@ print(zero_domestic.sort_values('USD_Production_Budget', ascending=False))
 zero_worldwide = data[data.USD_Worldwide_Gross == 0]
 print(f'Number of films that grossed $0 worldwide {len(zero_worldwide)}')
 print(zero_worldwide.sort_values('USD_Production_Budget', ascending=False))
+
+# Filtering on Multiple Conditions
+
+international_releases = data.loc[(data.USD_Domestic_Gross == 0) &
+                                  (data.USD_Worldwide_Gross != 0)]
+print(f'Number of international releasees: {len(international_releases)}\n\nInternational releases:')
+print(international_releases.head())
+
+international_releases = data.query('USD_Domestic_Gross == 0 and USD_Worldwide_Gross != 0')
+print(f'Number of international releases: {len(international_releases)}\n\nInternational releases:')
+print(international_releases.head())
+
+# Unreleased Films
+
+scrape_date = pd.Timestamp('2018-5-1')
+future_releases = data[data.Release_Date >= scrape_date]
+print(f'Number of unreleased movies: {len(future_releases)}')
+print(future_releases)
+
+data_clean = data.drop(future_releases.index)
+
+# Films that Lost Money
+
+money_losing = data_clean.loc[data_clean.USD_Production_Budget > data_clean.USD_Worldwide_Gross]
+print(f'{(len(money_losing)/len(data_clean) * 100)} %')
