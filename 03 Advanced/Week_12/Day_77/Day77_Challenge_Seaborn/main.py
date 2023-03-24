@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 from pandas.plotting import register_matplotlib_converters
 
@@ -8,7 +9,6 @@ pd.options.display.float_format = '{:,.2f}'.format
 register_matplotlib_converters()
 
 data = pd.read_csv('cost_revenue_dirty.csv')
-
 
 # Explore and Clean the Data
 
@@ -90,4 +90,73 @@ data_clean = data.drop(future_releases.index)
 # Films that Lost Money
 
 money_losing = data_clean.loc[data_clean.USD_Production_Budget > data_clean.USD_Worldwide_Gross]
-print(f'{(len(money_losing)/len(data_clean) * 100)} %')
+print(f'{(len(money_losing) / len(data_clean) * 100)} %')
+
+# Seaborn for Data Viz: Bubble Charts
+
+plt.figure(figsize=(8, 4), dpi=200)
+sns.scatterplot(data=data_clean,
+                x='USD_Production_Budget',
+                y='USD_Worldwide_Gross')
+plt.show()
+
+plt.figure(figsize=(8, 4), dpi=200)
+
+ax = sns.scatterplot(data=data_clean,
+                     x='USD_Production_Budget',
+                     y='USD_Worldwide_Gross')
+
+ax.set(ylim=(0, 3000000000),
+       xlim=(0, 450000000),
+       ylabel='Revenue in $ billions',
+       xlabel='Budget in $100 millions')
+
+plt.show()
+
+plt.figure(figsize=(8, 4), dpi=200)
+ax = sns.scatterplot(data=data_clean,
+                     x='USD_Production_Budget',
+                     y='USD_Worldwide_Gross',
+                     hue='USD_Worldwide_Gross',
+                     size='USD_Worldwide_Gross', )
+
+ax.set(ylim=(0, 3000000000),
+       xlim=(0, 450000000),
+       ylabel='Revenue in $ billions',
+       xlabel='Budget in $100 millions', )
+
+plt.show()
+
+plt.figure(figsize=(8, 4), dpi=200)
+
+with sns.axes_style('darkgrid'):
+    ax = sns.scatterplot(data=data_clean,
+                         x='USD_Production_Budget',
+                         y='USD_Worldwide_Gross',
+                         hue='USD_Worldwide_Gross',
+                         size='USD_Worldwide_Gross')
+
+    ax.set(ylim=(0, 3000000000),
+           xlim=(0, 450000000),
+           ylabel='Revenue in $ billions',
+           xlabel='Budget in $100 millions')
+
+    plt.show()
+
+# Plotting Movie Releases over Time
+
+plt.figure(figsize=(8, 4), dpi=200)
+
+with sns.axes_style('darkgrid'):
+    ax = sns.scatterplot(data=data_clean,
+                         x='Release_Date',
+                         y='USD_Production_Budget',
+                         hue='USD_Worldwide_Gross',
+                         size='USD_Worldwide_Gross')
+
+    ax.set(ylim=(0, 450000000),
+           xlim=(data_clean.Release_Date.min(), data_clean.Release_Date.max()),
+           ylabel='Year',
+           xlabel='Budget in $100 millions')
+
+    plt.show()
