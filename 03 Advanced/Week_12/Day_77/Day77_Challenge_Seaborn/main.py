@@ -160,3 +160,16 @@ with sns.axes_style('darkgrid'):
            xlabel='Budget in $100 millions')
 
     plt.show()
+
+# Converting Years to Decades Trick
+
+dt_index = pd.DatetimeIndex(data_clean.Release_Date)
+years = dt_index.year
+decades = years//10*10
+data_clean['Decade'] = decades
+print(data_clean)
+
+old_films = data_clean[data_clean.Decade <= 1960]
+new_films = data_clean[data_clean.Decade > 1960]
+print(old_films.describe())
+print(old_films.sort_values('USD_Production_Budget', ascending=False).head())
