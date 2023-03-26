@@ -169,7 +169,12 @@ decades = years//10*10
 data_clean['Decade'] = decades
 print(data_clean)
 
+# Categorize Movies in old and new
+
 old_films = data_clean[data_clean.Decade <= 1960]
 new_films = data_clean[data_clean.Decade > 1960]
 print(old_films.describe())
-print(old_films.sort_values('USD_Production_Budget', ascending=False).head())
+print(old_films.sort_values('USD_Production_Budget', ascending=False).head(), end="\n\n")
+
+print(new_films.describe())
+print(new_films.sort_values('USD_Production_Budget', ascending=False).head(), end="\n\n")
