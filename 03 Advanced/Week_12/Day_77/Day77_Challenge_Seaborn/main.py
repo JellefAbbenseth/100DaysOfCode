@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+from sklearn.linear_model import LinearRegression
 from pandas.plotting import register_matplotlib_converters
 
 pd.options.display.float_format = '{:,.2f}'.format
@@ -178,3 +179,62 @@ print(old_films.sort_values('USD_Production_Budget', ascending=False).head(), en
 
 print(new_films.describe())
 print(new_films.sort_values('USD_Production_Budget', ascending=False).head(), end="\n\n")
+
+# Seaborn Regression Plots
+
+plt.figure(figsize=(8,4), dpi=200)
+with sns.axes_style("whitegrid"):
+    sns.regplot(data=old_films,
+                x='USD_Production_Budget',
+                y='USD_Worldwide_Gross',
+                scatter_kws = {'alpha': 0.4},
+                line_kws = {'color': 'black'})
+    plt.show()
+
+plt.figure(figsize=(8,4), dpi=200)
+with sns.axes_style('darkgrid'):
+    ax = sns.regplot(data=new_films,
+                     x='USD_Production_Budget',
+                     y='USD_Worldwide_Gross',
+                     color='#2f4b7c',
+                     scatter_kws = {'alpha': 0.3},
+                     line_kws = {'color': '#ff7c43'})
+
+    ax.set(ylim=(0, 3000000000),
+           xlim=(0, 450000000),
+           ylabel='Revenue in $ billions',
+           xlabel='Budget in $100 millions')
+    plt.show()
+
+# Run Your Own Regression with scikit-learn
+
+print("\nNew films:")
+regression = LinearRegression()
+X = pd.DataFrame(new_films, columns=['USD_Production_Budget'])
+y = pd.DataFrame(new_films, columns=['USD_Worldwide_Gross'])
+regression.fit(X, y)
+print(f"Theta zero: {regression.intercept_}")
+print(f"Theta one: {regression.coef_}")
+print(f"R-squared: {regression.score(X, y)}")
+
+print("\n\nOld films:")
+regression = LinearRegression()
+X = pd.DataFrame(old_films, columns=['USD_Production_Budget'])
+y = pd.DataFrame(old_films, columns=['USD_Worldwide_Gross'])
+
+regression.fit(X, y)
+print(f"Theta zero: {regression.intercept_}")
+print(f"Theta one: {regression.coef_}")
+r_squared = regression.score(X, y)
+print(f"R-squared: {r_squared}")
+print(f"R-Squared in %: {r_squared * 100} %.")
+
+# Use Your Model to Make a Prediction
+
+calculation = 22821538 + 1.64771314 * 350000000
+print(f"Calculation: {calculation}")
+
+budget = 350000000
+revenue_estimate = regression.intercept_[0] + regression.coef_[0,0]*budget
+revenue_estimate = round(revenue_estimate, -6)
+print(f'The estimated revenue for a $350 film is around ${revenue_estimate:.10}.')
