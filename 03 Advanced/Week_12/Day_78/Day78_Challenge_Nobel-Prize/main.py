@@ -63,11 +63,11 @@ print(multiple_winners[col_subset])
 
 print(df_data.category.nunique())
 
-prizes_per_category = df_data.category.value_counts()
+prizes_per_category: object = df_data.category.value_counts()
 v_bar = px.bar(
-    x = prizes_per_category.index,
-    y = prizes_per_category.values,
-    color = prizes_per_category.values,
+    x=prizes_per_category.index,
+    y=prizes_per_category.values,
+    color=prizes_per_category.values,
     color_continuous_scale='Aggrnyl',
     title='Number of Prizes Awarded per Category')
 
@@ -85,9 +85,9 @@ cat_men_women = df_data.groupby(['category', 'sex'],
 cat_men_women.sort_values('prize', ascending=False, inplace=True)
 print(cat_men_women)
 
-v_bar_split = px.bar(x = cat_men_women.category,
-                     y = cat_men_women.prize,
-                     color = cat_men_women.sex,
+v_bar_split = px.bar(x=cat_men_women.category,
+                     y=cat_men_women.prize,
+                     color=cat_men_women.sex,
                      title='Number of Prizes Awarded per Category split by Men and Women')
 
 v_bar_split.update_layout(xaxis_title='Nobel Prize Category',
