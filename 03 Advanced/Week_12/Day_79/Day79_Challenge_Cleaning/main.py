@@ -64,6 +64,7 @@ ax2.plot(df_monthly.date,
 
 plt.show()
 
+# with ticks
 years = mdates.YearLocator()
 months = mdates.MonthLocator()
 years_fmt = mdates.DateFormatter('%Y')
