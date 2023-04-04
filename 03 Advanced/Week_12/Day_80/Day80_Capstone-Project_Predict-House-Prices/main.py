@@ -61,4 +61,64 @@ sns.displot(data=data,
             aspect=2,)
 plt.show()
 
+# Next to the River?
+
+grouped_properties = data['CHAS'].value_counts()
+print(grouped_properties)
+
+plt.figure(figsize=(14,8))
+plt.xticks(fontsize=14)
+plt.yticks(fontsize=14)
+plt.title('Next to Charles River?')
+plt.xlabel('Property Located Next to the River?')
+plt.ylabel('Number of Homes')
+plt.bar(['No', 'Yes'], grouped_properties)
+plt.show()
+
+# Understand the Relationships in the Data
+
+sns.pairplot(data,
+             x_vars='DIS',
+             y_vars='NOX',
+             hue='DIS',
+             aspect=2)
+
+sns.pairplot(data,
+             x_vars='RM',
+             y_vars='PRICE')
+
+sns.pairplot(data,
+             x_vars='LSTAT',
+             y_vars='PRICE')
+
+# Distance from Employment vs. Pollution
+
+sns.jointplot(data=data,
+              x='DIS',
+              y='NOX')
+
+# Proportion of Non-Retail Industry versus Pollution
+
+sns.jointplot(data=data,
+              x='INDUS',
+              y='NOX')
+
+# % of Lower Income Population vs Average Number of Rooms
+
+sns.jointplot(data=data,
+              x='LSTAT',
+              y='RM')
+
+# % of Lower Income Population versus Home Price
+
+sns.jointplot(data=data,
+              x='LSTAT',
+              y='PRICE')
+
+# Number of Rooms versus Home Value
+
+sns.jointplot(data=data,
+              x='RM',
+              y='PRICE')
+
 
