@@ -6,6 +6,7 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 
 from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
 
 pd.options.display.float_format = '{:,.2f}'.format
 
@@ -121,4 +122,18 @@ sns.jointplot(data=data,
               x='RM',
               y='PRICE')
 
+# Split Training & Test Dataset
 
+target = data['PRICE']
+features = data.drop('PRICE', axis=1)
+
+X_train, X_test, y_train, y_test = train_test_split(features,
+                                                    target,
+                                                    test_size=0.2,
+                                                    random_state=10)
+
+train_pct = 100*len(X_train)/len(features)
+print(f'Training data is {train_pct:.3}% of the total data.')
+
+test_pct = 100*X_test.shape[0]/features.shape[0]
+print(f'Test data makes up the remaining {test_pct:0.3}%.')
