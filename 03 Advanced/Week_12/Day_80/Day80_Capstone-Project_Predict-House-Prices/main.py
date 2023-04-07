@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-
 import seaborn as sns
 import plotly.express as px
 import matplotlib.pyplot as plt
@@ -9,7 +8,6 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
 pd.options.display.float_format = '{:,.2f}'.format
-
 data = pd.read_csv('boston.csv', index_col=0)
 
 # Preliminary Data Exploration
