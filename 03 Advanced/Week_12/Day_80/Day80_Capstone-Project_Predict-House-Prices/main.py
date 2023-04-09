@@ -132,6 +132,8 @@ X_train, X_test, y_train, y_test = train_test_split(features,
                                                     test_size=0.2,
                                                     random_state=10)
 
+# Information about Test Data
+
 train_pct = 100 * len(X_train) / len(features)
 print(f'Training data is {train_pct:.3}% of the total data.')
 
