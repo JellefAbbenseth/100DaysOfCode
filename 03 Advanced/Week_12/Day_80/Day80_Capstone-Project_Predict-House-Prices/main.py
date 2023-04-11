@@ -179,7 +179,7 @@ plt.xlabel('Predicted Prices $\hat y _i$', fontsize=14)
 plt.ylabel('Residuals', fontsize=14)
 plt.show()
 
-# Residuals skew
+# Residuals skew and mean
 
 resid_mean = round(residuals.mean(), 2)
 resid_skew = round(residuals.skew(), 2)
