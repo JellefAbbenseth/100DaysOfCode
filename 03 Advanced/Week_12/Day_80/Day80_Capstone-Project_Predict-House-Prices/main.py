@@ -8,6 +8,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
 # Todo: Continue, review and understand
+# Finish the last capstone Project
 
 # Import and Options
 
