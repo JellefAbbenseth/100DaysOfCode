@@ -7,8 +7,7 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
-# Todo: Continue, review and understand
-# Finish the last capstone Project
+# Todo: Continue
 
 # Import and Options
 
