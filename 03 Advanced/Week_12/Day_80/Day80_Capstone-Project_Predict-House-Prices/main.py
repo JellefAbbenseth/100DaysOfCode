@@ -7,8 +7,6 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
-# Todo: Continue
-
 # Import and Options
 
 pd.options.display.float_format = '{:,.2f}'.format
