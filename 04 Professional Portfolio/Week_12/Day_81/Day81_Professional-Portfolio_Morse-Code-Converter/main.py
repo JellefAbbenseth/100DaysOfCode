@@ -9,3 +9,5 @@
 # What should be left out
 # When is the project finished
 # MVP
+
+print("Morse Code Converter")
