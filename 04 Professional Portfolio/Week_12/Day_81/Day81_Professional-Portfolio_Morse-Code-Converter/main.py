@@ -11,5 +11,10 @@
 # What should be left out
 # When is the project finished
 # MVP
+# TDD
+
+# mapping characters to morse code
+# convert text to morse code text
+# GUI
 
 print("Morse Code Converter")
