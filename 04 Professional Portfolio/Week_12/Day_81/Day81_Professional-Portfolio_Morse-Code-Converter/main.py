@@ -16,5 +16,6 @@
 # mapping characters to morse code
 # convert text to morse code text
 # GUI
+# no database needed
 
 print("Morse Code Converter")
