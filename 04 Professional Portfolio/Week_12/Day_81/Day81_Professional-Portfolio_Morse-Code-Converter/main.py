@@ -17,5 +17,7 @@
 # convert text to morse code text
 # GUI - only necessary elements
 # no database needed
+# direct converting of text
+# special characters are changed or not needed
 
 print("Morse Code Converter")
