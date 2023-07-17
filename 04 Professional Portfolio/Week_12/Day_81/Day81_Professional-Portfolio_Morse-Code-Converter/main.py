@@ -21,3 +21,5 @@
 # special characters are changed or not needed
 
 print("Morse Code Converter")
+print("\nBitte Text eintragen:")
+text = "Beispiel"
