@@ -20,6 +20,11 @@
 # direct converting of text
 # special characters are changed or not needed
 
+code_dict = {
+    "a": "",
+    "b": ""
+}
+
 print("Morse Code Converter")
 print("\nBitte Text eintragen:")
 text = "Beispiel"
