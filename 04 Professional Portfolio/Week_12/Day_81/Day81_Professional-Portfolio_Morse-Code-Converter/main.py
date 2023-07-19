@@ -1,6 +1,7 @@
 # Text to Morse Code Converter
 
 # It is used to convert normal text, given by the user into morse code
+# Codetable from online source
 
 # Todo: Planning and programming
 # What's the goal
