@@ -13,7 +13,7 @@
 # When is the project finished
 # MVP
 # TDD
-# Add other characters too
+# Add other characters too (. , : ...)
 
 # mapping characters to morse code
 # convert text to morse code text
