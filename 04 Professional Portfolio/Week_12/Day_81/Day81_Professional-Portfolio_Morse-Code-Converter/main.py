@@ -32,6 +32,10 @@ code_dict = {
     ".": "._._._", ",": "__..__", ":": "___...", ";": "_._._.", "?": "..__..", "!": "_._.__",
 }
 
+code_sign_dict = {
+    "KA": "_._._", "BT": "_..._", "AR": "._._.", "SK": "..._._"
+}
+
 print("Morse Code Converter")
 print("\nBitte Text eintragen:")
 text = "Beispiel"
