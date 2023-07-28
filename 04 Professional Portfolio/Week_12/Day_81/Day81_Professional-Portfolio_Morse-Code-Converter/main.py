@@ -36,6 +36,14 @@ code_sign_dict = {
     "KA": "_._._", "BT": "_..._", "AR": "._._.", "SK": "..._._"
 }
 
+
+def convert_text(normal_text):
+    global code_sign_dict, code_dict
+    code_text = code_sign_dict["KA"] + " "
+    return code_text
+
+
 print("Morse Code Converter")
 print("\nBitte Text eintragen:")
 text = "Beispiel"
+print(convert_text(text))
