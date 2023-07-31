@@ -43,6 +43,7 @@ code_sign_dict = {
 def convert_text(normal_text):
     global code_sign_dict, code_dict
     code_text = code_sign_dict["KA"] + " "
+    code_text += code_sign_dict["SK"]
     return code_text
 
 
