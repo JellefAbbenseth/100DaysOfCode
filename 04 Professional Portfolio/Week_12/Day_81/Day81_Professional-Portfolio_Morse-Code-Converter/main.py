@@ -37,9 +37,6 @@ code_sign_dict = {
 }
 
 
-# for each char convert
-# check for special chars
-# Start and end of the text
 def convert_text(normal_text):
     global code_sign_dict, code_dict
     code_text = code_sign_dict["KA"] + " "
