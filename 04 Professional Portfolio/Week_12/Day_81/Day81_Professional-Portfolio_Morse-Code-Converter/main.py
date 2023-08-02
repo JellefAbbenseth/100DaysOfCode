@@ -41,7 +41,7 @@ def convert_text(normal_text):
     global code_sign_dict, code_dict
     code_text = code_sign_dict["KA"] + " "
     # for char in normal_text -> if ch continue once then change to code_dict["ch"]
-    # skip is important
+    # skip is important for the "ch"
     code_text += code_sign_dict["SK"]
     return code_text
 
