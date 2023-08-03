@@ -42,6 +42,13 @@ def convert_text(normal_text):
     code_text = code_sign_dict["KA"] + " "
     # for char in normal_text -> if ch continue once then change to code_dict["ch"]
     # skip is important for the "ch"
+    for i in range(len(normal_text)):
+        if normal_text[i].lower() == "c" and normal_text[i + 1].lower() == "h":
+            continue
+        elif normal_text[i - 1].lower() == "c" and normal_text[i+1].lower() == "h":
+            code_text += code_dict["ch"] + " "
+            continue
+        code_text += code_dict[normal_text[i].lower()] + " "
     code_text += code_sign_dict["SK"]
     return code_text
 
