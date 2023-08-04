@@ -32,16 +32,11 @@ code_dict = {
     ".": "._._._", ",": "__..__", ":": "___...", ";": "_._._.", "?": "..__..", "!": "_._.__",
 }
 
-code_sign_dict = {
-    "KA": "_._._", "BT": "_..._", "AR": "._._.", "SK": "..._._"
-}
-
 
 def convert_text(normal_text):
-    global code_sign_dict, code_dict
-    code_text = code_sign_dict["KA"] + " "
-    # for char in normal_text -> if ch continue once then change to code_dict["ch"]
-    # skip is important for the "ch"
+    global code_dict
+    code_text = ""
+    # todo: fix "ch"
     for i in range(len(normal_text)):
         if normal_text[i].lower() == "c" and normal_text[i + 1].lower() == "h":
             continue
@@ -49,11 +44,12 @@ def convert_text(normal_text):
             code_text += code_dict["ch"] + " "
             continue
         code_text += code_dict[normal_text[i].lower()] + " "
-    code_text += code_sign_dict["SK"]
     return code_text
 
 
 print("Morse Code Converter")
 print("\nBitte Text eintragen:")
 text = "Beispiel"
+print(convert_text(text))
+text = "Sache"
 print(convert_text(text))
