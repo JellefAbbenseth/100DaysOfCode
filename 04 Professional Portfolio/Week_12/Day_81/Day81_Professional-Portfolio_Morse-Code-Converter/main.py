@@ -40,7 +40,7 @@ def convert_text(normal_text):
     for i in range(len(normal_text)):
         if normal_text[i].lower() == "c" and normal_text[i + 1].lower() == "h":
             continue
-        elif normal_text[i - 1].lower() == "c" and normal_text[i+1].lower() == "h":
+        elif normal_text[i - 1].lower() == "c" and normal_text[i].lower() == "h":
             code_text += code_dict["ch"] + " "
             continue
         code_text += code_dict[normal_text[i].lower()] + " "
