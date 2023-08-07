@@ -15,7 +15,6 @@
 # TDD
 # Add other characters too (. , : ...)
 
-# mapping characters to morse code
 # convert text to morse code text
 # GUI - only necessary elements
 # no database needed
@@ -36,7 +35,6 @@ code_dict = {
 def convert_text(normal_text):
     global code_dict
     code_text = ""
-    # todo: fix "ch"
     for i in range(len(normal_text)):
         if normal_text[i].lower() == "c" and normal_text[i + 1].lower() == "h":
             continue
@@ -45,6 +43,7 @@ def convert_text(normal_text):
             continue
         code_text += code_dict[normal_text[i].lower()] + " "
     return code_text
+
 
 # Todo: testcases and tests
 
