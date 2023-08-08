@@ -45,8 +45,6 @@ def convert_text(normal_text):
     return code_text
 
 
-# Todo: testcases and tests
-
 print("Morse Code Converter")
 print("\nBitte Text eintragen:")
 text = "Beispiel"
