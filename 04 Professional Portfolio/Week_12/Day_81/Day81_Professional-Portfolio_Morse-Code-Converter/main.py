@@ -21,6 +21,8 @@
 # direct converting of text
 # special characters are changed or not needed
 
+# Todo: to own class
+
 code_dict = {
     "a": "._", "b": "_...", "c": "_._.", "d": "_..", "e": ".", "f": ".._.", "g": "__.", "h": "....", "i": "..",
     "j": ".___", "k": "_._", "l": "._..", "m": "__", "n": "_.", "o": "___", "p": ".__.", "q": "__._", "r": "._.",
