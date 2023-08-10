@@ -13,13 +13,8 @@
 # When is the project finished
 # MVP
 # TDD
-# Add other characters too (. , : ...)
 
-# convert text to morse code text
 # GUI - only necessary elements
-# no database needed
-# direct converting of text
-# special characters are changed or not needed
 
 # Todo: to own class
 
