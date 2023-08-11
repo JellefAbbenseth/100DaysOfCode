@@ -17,6 +17,7 @@
 # GUI - only necessary elements
 
 # Todo: to own class
+# Todo: flask for UI
 
 code_dict = {
     "a": "._", "b": "_...", "c": "_._.", "d": "_..", "e": ".", "f": ".._.", "g": "__.", "h": "....", "i": "..",
@@ -40,11 +41,3 @@ def convert_text(normal_text):
             continue
         code_text += code_dict[normal_text[i].lower()] + " "
     return code_text
-
-
-print("Morse Code Converter")
-print("\nBitte Text eintragen:")
-text = "Beispiel"
-print(convert_text(text))
-text = "Sache"
-print(convert_text(text))
