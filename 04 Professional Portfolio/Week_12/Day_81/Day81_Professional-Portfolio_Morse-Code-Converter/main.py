@@ -3,7 +3,6 @@
 # It is used to convert normal text, given by the user into morse code
 # Codetable from online source
 
-# Todo: Planning and programming
 # What's the goal
 # What's important
 # Which methods are important
