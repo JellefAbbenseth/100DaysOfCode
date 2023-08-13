@@ -7,11 +7,6 @@
 # What's important
 # Which methods are important
 # What about UI, ...
-# What isn't important
-# What should be left out
-# When is the project finished
-# MVP
-# TDD
 
 # GUI - only necessary elements
 
