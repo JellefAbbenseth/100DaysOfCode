@@ -3,13 +3,6 @@
 # It is used to convert normal text, given by the user into morse code
 # Codetable from online source
 
-# What's the goal
-# What's important
-# Which methods are important
-# What about UI, ...
-
-# GUI - only necessary elements
-
 # Todo: to own class
 # Todo: flask for UI
 
