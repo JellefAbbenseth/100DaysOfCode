@@ -1,5 +1,5 @@
 # Todo: testcases and tests
-
+# which cases are needed?!
 
 # print("Morse Code Converter")
 # print("\nBitte Text eintragen:")
