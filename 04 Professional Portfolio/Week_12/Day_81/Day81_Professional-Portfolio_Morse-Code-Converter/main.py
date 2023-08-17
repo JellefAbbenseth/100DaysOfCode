@@ -5,6 +5,7 @@
 
 # Todo: to own class
 # Todo: flask for UI
+# Todo: server method
 
 code_dict = {
     "a": "._", "b": "_...", "c": "_._.", "d": "_..", "e": ".", "f": ".._.", "g": "__.", "h": "....", "i": "..",
