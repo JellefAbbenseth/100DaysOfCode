@@ -3,8 +3,10 @@
 # are there things to test for other parts?
 
 print("Morse Code Converter")
-print("\nBitte Text eintragen:")
-text = "Beispiel"
+print("\nPlease type in your text:")
+text = "Example"
 # print(convert_text(text))
-text = "Sache"
+text = "thing"
+# print(convert_text(text))
+text = "What a long text."
 # print(convert_text(text))
