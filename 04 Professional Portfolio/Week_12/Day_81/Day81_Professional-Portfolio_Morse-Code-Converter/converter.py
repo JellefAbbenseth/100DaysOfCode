@@ -24,7 +24,10 @@ class Converter:
     def convert_text(self, normal_text):
         code_text = ""
         for i in range(len(normal_text)):
-            if normal_text[i].lower() == "c" and normal_text[i + 1].lower() == "h":
+            if normal_text[i] == " ":
+                code_text += " "
+                continue
+            elif normal_text[i].lower() == "c" and normal_text[i + 1].lower() == "h":
                 continue
             elif normal_text[i - 1].lower() == "c" and normal_text[i].lower() == "h":
                 code_text += self.code_dict["ch"] + " "
