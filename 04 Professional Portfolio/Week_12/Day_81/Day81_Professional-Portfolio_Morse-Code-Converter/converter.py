@@ -5,7 +5,6 @@
 
 # Todo: change text above to server
 # Todo: flask for UI
-# Todo: server.py
 
 class Converter:
     def __init__(self):
