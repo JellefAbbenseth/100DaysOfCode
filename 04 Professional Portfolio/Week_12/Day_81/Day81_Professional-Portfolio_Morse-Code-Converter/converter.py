@@ -1,9 +1,3 @@
-# Text to Morse Code Converter
-
-# It is used to convert normal text, given by the user into morse code
-# Codetable from online source
-
-# Todo: change text above to server
 # Todo: flask for UI
 
 class Converter:
