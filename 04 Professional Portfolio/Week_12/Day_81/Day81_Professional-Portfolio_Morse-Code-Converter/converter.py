@@ -1,5 +1,3 @@
-# Todo: flask for UI
-
 class Converter:
     def __init__(self):
         self.code_dict = {
