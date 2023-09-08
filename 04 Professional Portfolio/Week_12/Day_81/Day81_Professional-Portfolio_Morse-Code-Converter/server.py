@@ -3,7 +3,7 @@ from flask import app, render_template, Flask
 # Text to Morse Code Converter
 
 # It is used to convert normal text, given by the user into morse code
-# Codetable from online source
+# Codetable from online source for the most important characters.
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6dPZnzWlSihBXox7C0sKR6b'
